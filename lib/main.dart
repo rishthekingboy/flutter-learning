@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter2/screens/Home.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,18 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Login App",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Beginner App"),
-        ),
-        body: Center(
-          child: Container(
-            child: Text("login"),
-          ),
-        ),
-        drawer: Drawer(),
-      ),
+      title: "Learning App",
+      routes: {
+        "/": (context) =>  HomePage(),
+      },
     );
   }
 }
