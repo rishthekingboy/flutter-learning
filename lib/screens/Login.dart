@@ -1,12 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class Login extends StatelessWidget {
-  const Login({ Key? key }) : super(key: key);
-
+class LoginScreen extends StatefulWidget {
   @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: GestureDetector(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0x665ac18e),
+                      Color(0x995ac18e),
+                      Color(0xcc5ac18e),
+                      Color(0xff5ac18e),
+                      ]
+                  )
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Sign In",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 50),
+                    
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
